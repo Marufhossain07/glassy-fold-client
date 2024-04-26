@@ -27,3 +27,12 @@ body.dark-theme{
    color: #2b2d42;
    font-weight: 600;
    }
+
+   .banner1{
+    background-image: url(./assets/banner1.jpg);
+    background-size: cover;
+   }
+   .banner2{
+    background-image: url(./assets/banner2.jpg);
+    background-size: cover;
+   }
