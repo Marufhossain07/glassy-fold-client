@@ -1,9 +1,15 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Navbar = () => {
     const [theme,setTheme] = useState('light')
-
+    const {user, logOut} =useContext(AuthContext);
+    const handleSignOut = ()=>{
+        logOut()
+        .then()
+        .catch()
+    }
     useEffect(()=>{
         localStorage.setItem('theme',theme);
         const localTheme = localStorage.getItem('theme');
@@ -23,6 +29,12 @@ const Navbar = () => {
         <li><NavLink to={'/allCraft'}>All Art & Craft Items</NavLink></li>
         <li><NavLink to={'/addCraft'}>Add Craft Item</NavLink></li>
         <li><NavLink to={'/myCraft'}>My Art & Craft List</NavLink></li>
+    {
+        user && <button onClick={handleSignOut} className='btn font-man py-2 px-8 bg-[#2b2d42] md:hidden lg:hidden border-none text-white'>Sign Out</button>
+    }
+    {
+        user? <></> : <Link to="/register"><button className='btn font-inter py-2 w-full px-8 bg-[#2b2d42] md:hidden lg:hidden border-none text-white'>Register</button></Link>
+    }
     </>
     return (
         <div>
@@ -34,7 +46,7 @@ const Navbar = () => {
                         </div>
                         <ul id="nav" tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             {links}
-                            <Link to="/register"><button className='btn font-inter py-2 w-full px-8 bg-[#006d77] border-none text-white'>Register</button></Link>
+                            
                         </ul>
                     </div>
                     <a className="btn btn-ghost text-2xl lg:text-4xl md:text-4xl font-pacifico ">GlassyFold</a>
@@ -42,6 +54,7 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul id="nav" className="menu menu-horizontal font-man px-1">
                         {links}
+                        
                     </ul>
                 </div>
                 <div className="navbar-end gap-3">
@@ -57,8 +70,28 @@ const Navbar = () => {
                         <svg className="swap-on fill-current w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" /></svg>
 
                     </label>
-                    <Link to="/login"><button className='btn font-man py-2 px-8 bg-[#2b2d42] border-none text-white'>Login</button></Link>
-                    <Link to="/register"><button className='btn hidden md:flex lg:flex font-man py-2 px-8 bg-[#2b2d42] border-none text-white'>Register</button></Link>
+                    {
+                    user ?
+
+                        <>
+                            <div className="avatar dropdown dropdown-hover">
+                                <div className="w-10  rounded-full ring ring-[#2b2d42] ring-offset-base-100 ring-offset-2">
+                                    <img src={user.photoURL} />
+                                    <ul tabIndex={0} className="dropdown-content z-10 menu p-2 shadow bg-base-100 font-medium rounded-box w-52">
+                                        <li><a>{user.displayName}</a></li>
+                                        <li><Link to='/profile'>Dashboard</Link></li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                            <button onClick={handleSignOut} className='btn font-man py-2 px-8 bg-[#2b2d42] hidden md:flex lg:flex border-none text-white'>Sign Out</button>
+                            </>
+                        :
+                        <>
+                        <Link to="/login"><button className='btn font-man py-2 px-8 bg-[#2b2d42] border-none text-white'>Login</button></Link>
+                        <Link to="/register"><button className='btn hidden md:flex lg:flex font-man py-2 px-8 bg-[#2b2d42] border-none text-white'>Register</button></Link></>
+                }
+                   
                 </div>
             </div>
         </div>
