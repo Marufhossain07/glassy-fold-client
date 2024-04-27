@@ -54,7 +54,7 @@ const AddCraft = () => {
                             </div>
                             <div className="col-span-full sm:col-span-3">
                                 <label htmlFor="email" className="text-sm">User Email</label>
-                                <input name="email" type="text" defaultValue={user?.email}  className="w-full p-3 rounded-md focus:ring focus:ring-opacity-75 text-gray-900 focus:ring-violet-400 border-gray-700" />
+                                <input name="email" type="text" defaultValue={user?.email}  className="w-full p-3 rounded-md focus:ring focus:ring-opacity-75 text-gray-900  border-gray-700" />
                             </div>
                             <div className="col-span-full sm:col-span-3">
                                 <label htmlFor="email" className="text-sm">User Name</label>
