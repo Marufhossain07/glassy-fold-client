@@ -20,10 +20,10 @@ const Footer = () => {
                                     <a className="flex gap-1 items-center" rel="noopener noreferrer" href="#"><IoLocationOutline /> Dhaka, Bangladesh</a>
                                 </li>
                                 <li>
-                                    <a className="flex gap-1 items-center" rel="noopener noreferrer" href="#"><MdOutlineMail/> admin@glassyfold.com</a>
+                                    <a className="flex gap-1 items-center" rel="noopener noreferrer" href="#"><MdOutlineMail /> admin@glassyfold.com</a>
                                 </li>
                                 <li>
-                                    <a className="flex gap-1 items-center" rel="noopener noreferrer" href="#"><FaPhoneAlt/> +880 1875262452</a>
+                                    <a className="flex gap-1 items-center" rel="noopener noreferrer" href="#"><FaPhoneAlt /> +880 1875262452</a>
                                 </li>
                             </ul>
                         </div>
@@ -55,7 +55,7 @@ const Footer = () => {
                                 </label>
                                 <div className="join">
                                     <input type="text" placeholder="username@site.com" className="input input-bordered join-item" />
-                                    <button className="btn btn-primary join-item">Subscribe</button>
+                                    <button className="btn btn-primary bg-[#2b2d42] text-white join-item">Subscribe</button>
                                 </div>
                             </fieldset>
                         </form>

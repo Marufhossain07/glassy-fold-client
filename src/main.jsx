@@ -8,6 +8,10 @@ import {
 import Home from './layouts/Home/Home.jsx';
 import Error from './layouts/Error.jsx';
 import Root from './layouts/Root/Root.jsx';
+import AuthProvider from './AuthProvider/AuthProvider.jsx';
+import Register from './layouts/Register.jsx';
+import Login from './layouts/Login.jsx';
+import AddCraft from './layouts/AddCraft.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,13 +21,28 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>
+      },
+      {
+        path: '/register',
+        element: <Register></Register>
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: '/addCraft',
+        element: <AddCraft></AddCraft>
       }
+
     ]
   }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <AuthProvider>
     <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )

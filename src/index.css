@@ -17,9 +17,7 @@ body{
     padding: 0;
     margin: 0;
 }
-body.dark-theme{
-    color: white;
-}
+
 
 #nav a.active{
     border: 1px solid #2b2d42;
@@ -34,5 +32,10 @@ body.dark-theme{
    }
    .banner2{
     background-image: url(./assets/banner2.jpg);
+    background-size: cover;
+   }
+   .bg1{
+    background-image: url(./assets/registerbg.jfif);
+    background-repeat: no-repeat;
     background-size: cover;
    }
