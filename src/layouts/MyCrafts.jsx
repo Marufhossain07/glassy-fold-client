@@ -14,8 +14,9 @@ const MyCrafts = () => {
 
     const handleSort = e =>{
         const sort = e.target.value;
-        const newItems = items.filter(item=> item.customization == sort);
-        setItems(newItems)
+        fetch(`http://localhost:5000/items/${user?.email}/${sort}`)
+        .then(res=> res.json())
+        .then(data => setItems(data))
     }
 
     return (
