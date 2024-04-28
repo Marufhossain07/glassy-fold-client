@@ -12,6 +12,7 @@ import AuthProvider from './AuthProvider/AuthProvider.jsx';
 import Register from './layouts/Register.jsx';
 import Login from './layouts/Login.jsx';
 import AddCraft from './layouts/AddCraft.jsx';
+import MyCrafts from './layouts/MyCrafts.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: '/addCraft',
         element: <AddCraft></AddCraft>
+      },
+      {
+        path: '/myCraft',
+        element: <MyCrafts></MyCrafts>
       }
 
     ]
