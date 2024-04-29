@@ -18,6 +18,7 @@ import Update from './layouts/Update.jsx';
 import Details from './layouts/Details.jsx';
 import AllCrafts from './layouts/AllCrafts.jsx';
 import Sub from './layouts/Sub.jsx';
+
 const router = createBrowserRouter([
   {
     path: "/",
