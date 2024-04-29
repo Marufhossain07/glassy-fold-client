@@ -1,3 +1,4 @@
+import Categories from "../Categories";
 import CraftItems from "../CraftItems";
 
 
@@ -41,6 +42,9 @@ const Home = () => {
             </div>
             <div>
                 <CraftItems></CraftItems>
+            </div>
+            <div>
+                <Categories></Categories>
             </div>
         </div>
     );

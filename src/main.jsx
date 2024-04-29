@@ -17,6 +17,7 @@ import PrivateRoutes from './PrivateRoutes/PrivateRoutes.jsx';
 import Update from './layouts/Update.jsx';
 import Details from './layouts/Details.jsx';
 import AllCrafts from './layouts/AllCrafts.jsx';
+import Sub from './layouts/Sub.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -64,6 +65,11 @@ const router = createBrowserRouter([
       {
         path:'/allCrafts',
         element: <AllCrafts></AllCrafts>
+      },
+      {
+        path: '/subCategory/:sub',
+        element: <Sub></Sub>,
+        loader: ({params})=>fetch(`http://localhost:5000/items-from-sub/${params.sub}`)
       }
 
     ]

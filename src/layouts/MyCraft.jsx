@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import PropTypes from 'prop-types';
 import { GoStarFill } from "react-icons/go";
 import Swal from "sweetalert2";
 import { HandleContext } from "./MyCrafts";
@@ -68,5 +69,9 @@ const MyCraft = ({i}) => {
         </div>
     );
 };
+
+MyCraft.propTypes = {
+    i: PropTypes.object.isRequired
+}
 
 export default MyCraft;

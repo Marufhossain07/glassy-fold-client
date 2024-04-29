@@ -26,7 +26,7 @@ const Navbar = () => {
     }
     const links = <>
         <li><NavLink to={'/'}>Home</NavLink></li>
-        <li><NavLink to={'/allCraft'}>All Art & Craft Items</NavLink></li>
+        <li><NavLink to={'/allCrafts'}>All Art & Craft Items</NavLink></li>
         <li><NavLink to={'/addCraft'}>Add Craft Item</NavLink></li>
         <li><NavLink to={'/myCraft'}>My Art & Craft List</NavLink></li>
     {

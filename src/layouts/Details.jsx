@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router-dom";
 
 const Details = () => {
     const data = useLoaderData();
-    const { item, sub, description, price, rating, customization, time, stock, email, name, photo } = data;
+    const { item, sub, description, price, rating, customization, time, stock, photo } = data;
     return (
         <div className="mt-5">
             <h3 className="text-4xl font-pop text-center 
