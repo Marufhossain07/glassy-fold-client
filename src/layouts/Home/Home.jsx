@@ -12,7 +12,7 @@ const Home = () => {
                         <button className='btn text-lg font-man py-2 px-8 bg-[#2b2d42] border-none text-white'>Buy Now</button>
                     </div>
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide2" className="btn btn-circle">❮</a>
+                        <a href="#slide3" className="btn btn-circle">❮</a>
                         <a href="#slide2" className="btn btn-circle">❯</a>
                     </div>
                 </div>
@@ -24,6 +24,17 @@ const Home = () => {
                     </div>
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide1" className="btn btn-circle">❮</a>
+                        <a href="#slide3" className="btn btn-circle">❯</a>
+                    </div>
+                </div>
+                <div id="slide3" className="carousel-item relative w-full banner3 md:h-[470px] lg:h-[470px]">
+                    <div className="space-y-5 pl-24 pt-24 text-[#2b2d42]">
+                        <h3 className="font-man text-xl pb-5 font-bold ">You Can Trust Us</h3>
+                        <h3 className="text-4xl md:text-6xl lg:text-6xl  font-semibold font-pop pb-5">Check Our <br /> WonderLand</h3>
+                        <button className='btn text-lg font-man py-2 px-8 bg-[#2b2d42] border-none text-white'>Buy Now</button>
+                    </div>
+                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide2" className="btn btn-circle">❮</a>
                         <a href="#slide1" className="btn btn-circle">❯</a>
                     </div>
                 </div>

@@ -1,7 +1,8 @@
 import { GoStarFill } from "react-icons/go";
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 const CraftItem = ({ i }) => {
-    const { item, price, rating, stock, photo } = i;
+    const { _id,item, price, rating, stock, photo } = i;
     return (
         <div className=" rounded-lg shadow-lg border flex flex-col justify-between border-[#2b2d42] dark:bg-gray-50 dark:text-gray-800">
             <div>
@@ -15,7 +16,7 @@ const CraftItem = ({ i }) => {
                 </div>
                 <div className="flex justify-between items-center">
                     <h3 className="font-map text-lg font-medium flex items-center gap-1"><GoStarFill/>{rating}</h3>
-                <button className='btn font-man py-2 px-8 bg-[#2b2d42] border-none text-white'>Show Details</button>
+                <Link to={`/items/${_id}`}><button className='btn font-man py-2 px-8 bg-[#2b2d42] border-none text-white'>Show Details</button></Link>
                 </div>
             </div>
         </div>

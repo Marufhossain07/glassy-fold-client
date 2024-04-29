@@ -98,7 +98,7 @@ const Register = () => {
     const signUpWithGithub = () => {
         githubSignIn()
             .then(result => {
-                console.log(result)
+                toast('Successfully Sign Up')
             })
             .catch(error => {
                 console.log(error)
@@ -107,7 +107,7 @@ const Register = () => {
     const signUpWithGoogle = () => {
         googleSignIn()
             .then(result => {
-                console.log(result)
+                toast('Successfully Sign Up')
             })
             .catch(error => {
                 console.log(error)

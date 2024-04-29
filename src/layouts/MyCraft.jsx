@@ -1,6 +1,50 @@
+import { useContext } from "react";
 import { GoStarFill } from "react-icons/go";
+import Swal from "sweetalert2";
+import { HandleContext } from "./MyCrafts";
+import { Link } from "react-router-dom";
 const MyCraft = ({i}) => {
-    const { item, price, rating, stock, photo, customization } = i;
+    const {_id, item, price, rating, stock, photo, customization} = i;
+
+        const {items,setItems} = useContext(HandleContext)
+
+    const handleDelete = _id => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+
+                fetch(`http://localhost:5000/items/${_id}`, {
+                method: 'DELETE'
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                console.log(data)
+                if(data.deletedCount> 0){
+                    
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        icon: "success"
+                      });
+
+                }
+                const remainingItems = items.filter(item => item._id !== _id);
+                setItems(remainingItems)
+            })
+
+
+
+              
+            }
+          });
+    }
     return (
         <div className=" rounded-lg shadow-lg border flex flex-col justify-between border-[#2b2d42] dark:bg-gray-50 dark:text-gray-800">
             <div>
@@ -16,8 +60,8 @@ const MyCraft = ({i}) => {
                 <div className="flex justify-between items-center">
                     <h3 className="font-map text-lg font-medium flex items-center gap-1"><GoStarFill/>{rating}</h3>
                 <div className="flex flex-col gap-3">
-                <button className='btn font-man py-2 px-8 bg-[#2b2d42] border-none text-white'>Update</button>
-                <button className='btn font-man py-2 px-8 bg-[#2b2d42] border-none text-white'>Delete</button>
+                <Link to={`/update/${_id}`}><button className='btn font-man py-2 px-8 bg-[#2b2d42] border-none text-white'>Update</button></Link>
+                <button onClick={()=>handleDelete(_id)} className='btn font-man py-2 px-8 bg-[#2b2d42] border-none text-white'>Delete</button>
                 </div>
                 </div>
             </div>

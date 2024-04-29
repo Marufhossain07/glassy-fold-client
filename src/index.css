@@ -34,6 +34,10 @@ body{
     background-image: url(./assets/banner2.jpg);
     background-size: cover;
    }
+   .banner3{
+    background-image: url(./assets/banner3.jfif);
+    background-size: cover;
+   }
    .bg1{
     background-image: url(./assets/registerbg.jfif);
     background-repeat: no-repeat;

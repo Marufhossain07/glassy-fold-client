@@ -1,23 +1,30 @@
-import { useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import MyCraft from "./MyCraft";
 
+export const HandleContext = createContext();
 const MyCrafts = () => {
     const [items, setItems] = useState([])
     const { user } = useContext(AuthContext)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/items/${user?.email}`)
+        fetch(`http://localhost:5000/items-from-email/${user?.email}`)
             .then(res => res.json())
             .then(data => setItems(data))
     }, [user?.email])
 
-    const handleSort = e =>{
+    const handleSort = e => {
         const sort = e.target.value;
         fetch(`http://localhost:5000/items/${user?.email}/${sort}`)
-        .then(res=> res.json())
-        .then(data => setItems(data))
+            .then(res => res.json())
+            .then(data => setItems(data))
     }
+
+    const states = {
+        items,
+        setItems
+    }
+    
 
     return (
         <div className="mt-5">
@@ -32,9 +39,12 @@ const MyCrafts = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 my-10 gap-5">
                 {
                     items.map(i => {
-                        return <MyCraft key={i._id} i={i}></MyCraft>
+                        return <HandleContext.Provider key={i._id} value={states}>
+                        <MyCraft key={i._id} i={i} items={items} setItems={setItems}></MyCraft>
+                        </HandleContext.Provider>
                     })
                 }
+                
             </div>
         </div>
     );

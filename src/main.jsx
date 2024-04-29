@@ -13,6 +13,10 @@ import Register from './layouts/Register.jsx';
 import Login from './layouts/Login.jsx';
 import AddCraft from './layouts/AddCraft.jsx';
 import MyCrafts from './layouts/MyCrafts.jsx';
+import PrivateRoutes from './PrivateRoutes/PrivateRoutes.jsx';
+import Update from './layouts/Update.jsx';
+import Details from './layouts/Details.jsx';
+import AllCrafts from './layouts/AllCrafts.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,11 +37,33 @@ const router = createBrowserRouter([
       },
       {
         path: '/addCraft',
-        element: <AddCraft></AddCraft>
+        element: <PrivateRoutes>
+          <AddCraft></AddCraft>
+        </PrivateRoutes>
       },
       {
         path: '/myCraft',
-        element: <MyCrafts></MyCrafts>
+        element: <PrivateRoutes>
+          <MyCrafts></MyCrafts>
+        </PrivateRoutes>
+      },
+      {
+        path: '/update/:id',
+        element: <PrivateRoutes>
+          <Update></Update>
+        </PrivateRoutes>,
+        loader: ({params})=> fetch(`http://localhost:5000/items/${params.id}`)
+      },
+      {
+        path:'/items/:id',
+        element: <PrivateRoutes>
+          <Details></Details>
+        </PrivateRoutes>,
+        loader: ({params})=> fetch(`http://localhost:5000/items/${params.id}`)
+      },
+      {
+        path:'/allCrafts',
+        element: <AllCrafts></AllCrafts>
       }
 
     ]
