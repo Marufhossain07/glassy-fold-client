@@ -5,7 +5,7 @@ const Category = ({category}) => {
     return (
         <div  id="hoverCard">
             <Link to={`/subCategory/${sub}`}>
-            <div className="card card-side border-2 border-[#2b2d42] shadow-2xl">
+            <div className=" lg:card card-side border-2 border-[#2b2d42] shadow-2xl">
                 <figure><img className="h-72 mx-auto w-72 object-cover" src={photo} alt="Movie" /></figure>
                 <div className="card-body text-left">
                     <h2 className="card-title text-2xl font-pop font-semibold">{sub}</h2>

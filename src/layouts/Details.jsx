@@ -7,7 +7,7 @@ const Details = () => {
         <div className="mt-5">
             <h3 className="text-4xl font-pop text-center 
             font-semibold text-[#2b2d42]">Item Details</h3>
-            <div className="text-[#2b2d42] flex gap-5 mt-10 border-2 border-[#2b2d42] rounded-lg">
+            <div className="text-[#2b2d42] flex flex-col md:flex-row lg:flex-row gap-5 mt-10 border-2 border-[#2b2d42] rounded-lg">
                 <div>
                     <img className="rounded-lg h-96" src={photo} alt="" />
                 </div>
