@@ -54,14 +54,14 @@ const router = createBrowserRouter([
         element: <PrivateRoutes>
           <Update></Update>
         </PrivateRoutes>,
-        loader: ({params})=> fetch(`http://localhost:5000/items/${params.id}`)
+        loader: ({params})=> fetch(`https://glassy-fold-server.vercel.app/items/${params.id}`)
       },
       {
         path:'/items/:id',
         element: <PrivateRoutes>
           <Details></Details>
         </PrivateRoutes>,
-        loader: ({params})=> fetch(`http://localhost:5000/items/${params.id}`)
+        loader: ({params})=> fetch(`https://glassy-fold-server.vercel.app/items/${params.id}`)
       },
       {
         path:'/allCrafts',
@@ -70,7 +70,7 @@ const router = createBrowserRouter([
       {
         path: '/subCategory/:sub',
         element: <Sub></Sub>,
-        loader: ({params})=>fetch(`http://localhost:5000/items-from-sub/${params.sub}`)
+        loader: ({params})=>fetch(`https://glassy-fold-server.vercel.app/items-from-sub/${params.sub}`)
       }
 
     ]

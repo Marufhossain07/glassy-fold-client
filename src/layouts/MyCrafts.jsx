@@ -8,14 +8,14 @@ const MyCrafts = () => {
     const { user } = useContext(AuthContext)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/items-from-email/${user?.email}`)
+        fetch(`https://glassy-fold-server.vercel.app/items-from-email/${user?.email}`)
             .then(res => res.json())
             .then(data => setItems(data))
     }, [user?.email])
 
     const handleSort = e => {
         const sort = e.target.value;
-        fetch(`http://localhost:5000/items/${user?.email}/${sort}`)
+        fetch(`https://glassy-fold-server.vercel.app/items/${user?.email}/${sort}`)
             .then(res => res.json())
             .then(data => setItems(data))
     }

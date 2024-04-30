@@ -25,7 +25,7 @@ const Update = () => {
         const photo = form.photo.value;
 
         const updatedItem = { item, sub, description, price, rating, customization, time, stock, email, name, photo };
-        fetch(`http://localhost:5000/items/${_id}`, {
+        fetch(`https://glassy-fold-server.vercel.app/items/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

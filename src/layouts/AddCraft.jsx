@@ -22,7 +22,7 @@ const AddCraft = () => {
         const photo = form.photo.value;
 
         const newItem = {item,sub,description,price,rating,customization,time,stock,email,name,photo};
-        fetch('http://localhost:5000/items', {
+        fetch('https://glassy-fold-server.vercel.app/items', {
             method: 'POST',
             headers: {
                 "content-type": 'application/json'

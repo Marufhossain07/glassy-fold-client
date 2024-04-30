@@ -21,7 +21,7 @@ const MyCraft = ({i}) => {
           }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/items/${_id}`, {
+                fetch(`https://glassy-fold-server.vercel.app/items/${_id}`, {
                 method: 'DELETE'
             })
             .then(res=>res.json())
