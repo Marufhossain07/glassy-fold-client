@@ -122,20 +122,20 @@ const Register = () => {
                     <form onSubmit={handleSignUp} noValidate="" action="" className="space-y-6">
                         <div className="space-y-1 text-sm">
                             <label className="block font-bold text-lg text-white">Name</label>
-                            <input type="text" required name="name" id="name" placeholder="Your Name" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
+                            <input type="text" required name="name" id="name" placeholder="Your Name" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 text-black focus:dark:border-violet-600" />
                         </div>
                         <div className="space-y-1 text-sm">
                             <label className="block font-bold text-lg dark:text-white">Photo URL</label>
-                            <input type="text" required name="photo" id="photo" placeholder="Your Photo URL" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
+                            <input type="text" required name="photo" id="photo" placeholder="Your Photo URL" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 text-black focus:dark:border-violet-600" />
                         </div>
                         <div className="space-y-1  text-sm">
                             <label className="block  font-bold text-lg dark:text-white">Email</label>
-                            <input type="email" name="email" id="email" placeholder="Your Email" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
+                            <input type="email" name="email" id="email" placeholder="Your Email" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 text-black focus:dark:border-violet-600" />
                         </div>
                         <div className="space-y-1 text-sm">
                             <label htmlFor="password" className="block font-bold text-lg dark:text-white">Password</label>
                             <div className="relative">
-                                <input type={showPassword ? "text" : "password"} name="password" id="password" placeholder="Your Password" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
+                                <input type={showPassword ? "text" : "password"} name="password" id="password" placeholder="Your Password" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 text-black focus:dark:border-violet-600" />
                                 <span onClick={() => setShowPassword(!showPassword)} className="absolute cursor-pointer right-3 top-3">{
                                     showPassword ? <AiOutlineEyeInvisible className="text-2xl text-black" /> : <AiOutlineEye className="text-black text-2xl" />
                                 }</span>

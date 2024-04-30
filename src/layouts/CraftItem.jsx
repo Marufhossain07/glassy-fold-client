@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const CraftItem = ({ i }) => {
     const { _id,item, price, rating, stock, photo } = i;
     return (
-        <div className=" rounded-lg shadow-lg border flex flex-col justify-between border-[#2b2d42] dark:bg-gray-50 dark:text-gray-800">
+        <div className=" rounded-lg shadow-lg border flex flex-col justify-between border-[#2b2d42] dark:bg-gray-50 text-black">
             <div>
             <img src={photo} alt="" className="w-full object-contain rounded-lg h-72 p-5" />
             </div>
@@ -12,7 +12,7 @@ const CraftItem = ({ i }) => {
                 <div className="space-y-2">
                     <h3 className="underline font-bold">Status: {stock}</h3>
                     <h2 className="text-3xl font-semibold tracking-wide">{item}</h2>
-                    <p className="dark:text-gray-800 font-semibold text-lg">Price :{price}</p>
+                    <p className="text-black font-semibold text-lg">Price :{price}</p>
                 </div>
                 <div className="flex justify-between items-center">
                     <h3 className="font-map text-lg font-medium flex items-center gap-1"><GoStarFill/>{rating}</h3>

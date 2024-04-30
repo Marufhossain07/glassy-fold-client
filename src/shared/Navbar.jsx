@@ -24,7 +24,6 @@ const Navbar = () => {
         } else {
             setTheme('light')
         }
-        console.log(theme)
     }
     const links = <>
         <li><NavLink to={'/'}>Home</NavLink></li>
