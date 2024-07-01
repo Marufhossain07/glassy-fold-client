@@ -6,11 +6,11 @@ Live : [GlassyFold](https://glassyfold.web.app/)
 
 ### Features:
 - **Diverse Collection:**
-- Explore a diverse range of art and craft items including paintings, sculptures, pottery, and more, each crafted by talented artisans.
+  Explore a diverse range of art and craft items including paintings, sculptures, pottery, and more, each crafted by talented artisans.
 - **Custom Creations:**
--  Personalize your art pieces with customizations tailored to your preferences, ensuring a truly unique and meaningful creation.
+   Personalize your art pieces with customizations tailored to your preferences, ensuring a truly unique and meaningful creation.
 - **Inspiration Gallery:**
-- Get inspired by our curated gallery showcasing stunning art pieces and DIY craft projects, perfect for unleashing your creativity.
+ Get inspired by our curated gallery showcasing stunning art pieces and DIY craft projects, perfect for unleashing your creativity.
 
    ## Technologies
 - Frontend: React, Router DOM, Tailwind CSS, DaisyUi, MambaUi
