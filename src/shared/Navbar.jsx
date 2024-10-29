@@ -18,7 +18,6 @@ const Navbar = () => {
         document.querySelector('html').setAttribute('data-theme', localTheme)
     }, [theme])
     const handleToggle = e => {
-        console.log(e.target.checked)
         if (e.target.checked) {
             setTheme('dark')
         } else {
@@ -87,7 +86,6 @@ const Navbar = () => {
                                 <Link to="/login"><button className='btn font-man py-2 px-8 bg-[#2b2d42] border-none text-white'>Login</button></Link>
                                 <Link to="/register"><button className='btn hidden md:flex lg:flex font-man py-2 px-8 bg-[#2b2d42] border-none text-white'>Register</button></Link></>
                     }
-
                 </div>
             </div>
         </div>
